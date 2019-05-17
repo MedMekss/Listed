@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+{% include 'todo/header.html' %}
+
+<canvas id="chart-doughnut"></canvas>
+
+<div style="text-align: center"> {# CENTER #}
+    <p>This is a summary of the amount<br>
+        of checklists you have set per category.</p>
+    <p>It's great to set goals, but do you<br>
+        achieve them as well?</p>
+</div>
+{# CENTER #}
+
+<canvas id="chart-bar"></canvas>
+
+<div style="text-align: center">
+    <p>This is a summary of your completion rate.<br>
+        A higher percentage means you are doing<br>
+        better to keep your goals!</p>
+    <p>You are doing well!<br>
+        Try working a little more on your Education.. </p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+<script>
+    var doughnut_config = {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [
+                    12,
+                    5,
+                    8,
+                    25,
+                    50,
+                ],
+                backgroundColor: [
+                    '#FF6958',
+                    '#FFCD58',
+                    '#FFFF58',
+                    '#78FF58',
+                    '#8A58FF',
+                ],
+                borderWidth: [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                ],
+            }],
+            labels: [
+                'Friends',
+                'Sport',
+                'Education',
+                'Work',
+                'Family'
+            ]
+        },
+        options: {
+            cutoutPercentage: 60,
+            title: {
+                display: true,
+                text: 'Checklist per category',
+                fontFamily: 'Nirmala UI',
+                fontColor: '#001A60',
+            },
+            legend: {
+                pointStyle: 'star',
+                position: 'right'
+            },
+        }
+    };
+
+    var bar_config = {
+        type: 'bar',
+        data: {
+            datasets: [{
+                data: [65, 59, 80, 81, 56, 55, 40],
+                backgroundColor: [
+                    '#FF6958',
+                    '#FFCD58',
+                    '#FFFF58',
+                    '#78FF58',
+                    '#8A58FF',
+                ],
+            }],
+            labels: [
+                'Friends',
+                'Sport',
+                'Education',
+                'Work',
+                'Family'
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Completion rate',
+                fontFamily: 'Nirmala UI',
+                fontColor: '#001A60',
+            },
+            legend: {
+                display: false,
+            }
+        }
+    };
+
+
+    window.onload = function () {
+        var doughnut_ctx = document.getElementById('chart-doughnut').getContext('2d');
+        window.myDoughnut = new Chart(doughnut_ctx, doughnut_config);
+
+        var bar_ctx = document.getElementById('chart-bar').getContext('2d');
+        window.myDoughnut = new Chart(bar_ctx, bar_config);
+    };
+</script>
+
+</body>
+</html>
