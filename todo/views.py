@@ -10,11 +10,11 @@ from . import models
 
 # /todo/
 class IndexView(TemplateView):
-    template_name = 'todo/index.html'
+    template_name = 'todo/template.html'
 
 
 class CategoryAddView(FormView):
-    template_name = 'todo/add_category.html'
+    template_name = 'todo/template.html'
     form_class = forms.CategoryForm
     success_url = reverse_lazy('todo:category_create')
 
