@@ -1,0 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.canvas {
+    min-width: 320px;
+    max-width: 360px;
+
+    margin-bottom: 20px;
+}

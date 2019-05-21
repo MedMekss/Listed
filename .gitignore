@@ -5224,3 +5224,5 @@ venv/Lib/site-packages/Django-2.2.1.dist-info/entry_points.txt
 .idea/Listed.iml
 .idea/misc.xml
 .idea/workspace.xml
+.idea/jsLibraryMappings.xml
+listed/__pycache__/settings.cpython-37.pyc

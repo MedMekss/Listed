@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,32 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Statistics</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'statistics.css' %}">
 </head>
 <body>
 {% include 'todo/header.html' %}
 
-<canvas id="chart-doughnut"></canvas>
-
-<div style="text-align: center"> {# CENTER #}
-    <p>This is a summary of the amount<br>
-        of checklists you have set per category.</p>
-    <p>It's great to set goals, but do you<br>
-        achieve them as well?</p>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="pages">
+            <div class="canvas">
+                <canvas id="chart-doughnut"></canvas>
+            </div>
+            <br>
+            <div style="text-align: center"> {# CENTER #}
+                <p>This is a summary of the amount<br>
+                    of checklists you have set per category.</p>
+                <p>It's great to set goals, but do you<br>
+                    achieve them as well?</p>
+            </div>
+            <div class="canvas">
+                <canvas id="chart-bar"></canvas>
+            </div>
+            <br>
+            <div style="text-align: center">
+                <p>This is a summary of your completion rate.<br>
+                    A higher percentage means you are doing<br>
+                    better to keep your goals!</p>
+                <p>You are doing well!<br>
+                    Try working a little more on your Education.. </p>
+            </div>
+        </div>
+    </div>
 </div>
-{# CENTER #}
 
-<canvas id="chart-bar"></canvas>
-
-<div style="text-align: center">
-    <p>This is a summary of your completion rate.<br>
-        A higher percentage means you are doing<br>
-        better to keep your goals!</p>
-    <p>You are doing well!<br>
-        Try working a little more on your Education.. </p>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -85,7 +95,6 @@
                 fontColor: '#001A60',
             },
             legend: {
-                pointStyle: 'star',
                 position: 'right'
             },
         }
@@ -95,7 +104,12 @@
         type: 'bar',
         data: {
             datasets: [{
-                data: [65, 59, 80, 81, 56, 55, 40],
+                data: [
+                    12,
+                    5,
+                    8,
+                    25,
+                    50,],
                 backgroundColor: [
                     '#FF6958',
                     '#FFCD58',
@@ -109,10 +123,11 @@
                 'Sport',
                 'Education',
                 'Work',
-                'Family'
+                'Family',
             ]
         },
         options: {
+            aspectRatio: 1,
             title: {
                 display: true,
                 text: 'Completion rate',
@@ -121,6 +136,18 @@
             },
             legend: {
                 display: false,
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 100,
+                        stepSize: 20,
+                        callback: function (value, index, values) {
+                            return value + '%';
+                        }
+                    }
+                }]
             }
         }
     };
@@ -134,6 +161,5 @@
         window.myDoughnut = new Chart(bar_ctx, bar_config);
     };
 </script>
-
 </body>
 </html>
