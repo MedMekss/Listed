@@ -18,7 +18,7 @@ class CheckList(models.Model):
     end_date = models.DateField(default=datetime.date.today)
 
     def __str__(self):
-        return self.title
+        return self.category.category_name + ' | ' + self.title
 
 
 class Item(models.Model):
@@ -27,4 +27,4 @@ class Item(models.Model):
     checklist = models.ForeignKey(CheckList, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.checklist.title + ' | ' + self.title

@@ -1,18 +1,7 @@
-{% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Statistics</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'statistics.css' %}">
-</head>
-<body>
-{% include 'todo/header.html' %}
+{% extends 'todo/template.html' %}
 
-<div class="container">
+{% block content %}
+
     <div class="row d-flex justify-content-center">
         <div class="pages">
             <div class="canvas">
@@ -38,128 +27,97 @@
             </div>
         </div>
     </div>
-</div>
+{% endblock %}
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-
-<script>
-    var doughnut_config = {
-        type: 'doughnut',
-        data: {
-            datasets: [{
-                data: [
-                    12,
-                    5,
-                    8,
-                    25,
-                    50,
-                ],
-                backgroundColor: [
-                    '#FF6958',
-                    '#FFCD58',
-                    '#FFFF58',
-                    '#78FF58',
-                    '#8A58FF',
-                ],
-                borderWidth: [
-                    0,
-                    0,
-                    0,
-                    0,
-                    0,
-                ],
-            }],
-            labels: [
-                'Friends',
-                'Sport',
-                'Education',
-                'Work',
-                'Family'
-            ]
-        },
-        options: {
-            cutoutPercentage: 60,
-            title: {
-                display: true,
-                text: 'Checklist per category',
-                fontFamily: 'Nirmala UI',
-                fontColor: '#001A60',
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script>
+        var doughnut_config = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: {{ category_sizes }},
+                    backgroundColor: [
+                        {% for category in categories %}
+                            '{{ category.color }}',
+                        {% endfor %}
+                    ],
+                    borderWidth: [
+                        {% for category in categories %}
+                            0,
+                        {% endfor %}
+                    ],
+                }],
+                labels: [
+                    {% for category in categories %}
+                        '{{ category.category_name }}',
+                    {% endfor %}
+                ]
             },
-            legend: {
-                position: 'right'
-            },
-        }
-    };
-
-    var bar_config = {
-        type: 'bar',
-        data: {
-            datasets: [{
-                data: [
-                    12,
-                    5,
-                    8,
-                    25,
-                    50,],
-                backgroundColor: [
-                    '#FF6958',
-                    '#FFCD58',
-                    '#FFFF58',
-                    '#78FF58',
-                    '#8A58FF',
-                ],
-            }],
-            labels: [
-                'Friends',
-                'Sport',
-                'Education',
-                'Work',
-                'Family',
-            ]
-        },
-        options: {
-            aspectRatio: 1,
-            title: {
-                display: true,
-                text: 'Completion rate',
-                fontFamily: 'Nirmala UI',
-                fontColor: '#001A60',
-            },
-            legend: {
-                display: false,
-            },
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        min: 0,
-                        max: 100,
-                        stepSize: 20,
-                        callback: function (value, index, values) {
-                            return value + '%';
-                        }
-                    }
-                }]
+            options: {
+                cutoutPercentage: 60,
+                title: {
+                    display: true,
+                    text: 'Checklist per category',
+                    fontFamily: 'Nirmala UI',
+                    fontColor: '#001A60',
+                },
+                legend: {
+                    position: 'right'
+                },
             }
-        }
-    };
+        };
+
+        var bar_config = {
+            type: 'bar',
+            data: {
+                datasets: [{
+                    data: {{ bar_data }},
+                    backgroundColor: [
+                        {% for category in categories %}
+                            '{{ category.color }}',
+                        {% endfor %}
+                    ],
+                }],
+                labels: [
+                    {% for category in categories %}
+                        '{{ category.category_name }}',
+                    {% endfor %}
+                ]
+            },
+            options: {
+                aspectRatio: 1,
+                title: {
+                    display: true,
+                    text: 'Completion rate',
+                    fontFamily: 'Nirmala UI',
+                    fontColor: '#001A60',
+                },
+                legend: {
+                    display: false,
+                },
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: 100,
+                            stepSize: 10,
+                            callback: function (value, index, values) {
+                                return value + '%';
+                            }
+                        }
+                    }]
+                }
+            }
+        };
 
 
-    window.onload = function () {
-        var doughnut_ctx = document.getElementById('chart-doughnut').getContext('2d');
-        window.myDoughnut = new Chart(doughnut_ctx, doughnut_config);
+        window.onload = function () {
+            var doughnut_ctx = document.getElementById('chart-doughnut').getContext('2d');
+            window.myDoughnut = new Chart(doughnut_ctx, doughnut_config);
 
-        var bar_ctx = document.getElementById('chart-bar').getContext('2d');
-        window.myDoughnut = new Chart(bar_ctx, bar_config);
-    };
-</script>
-</body>
-</html>
+            var bar_ctx = document.getElementById('chart-bar').getContext('2d');
+            window.myDoughnut = new Chart(bar_ctx, bar_config);
+        };
+    </script>
+{% endblock %}

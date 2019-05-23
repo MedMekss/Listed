@@ -1,3 +1,14 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Nirmala UI", 'helvetica';
+}
+
+.canvas {
+    min-width: 320px;
+    max-width: 360px;
+
+    margin-bottom: 20px;
 }
