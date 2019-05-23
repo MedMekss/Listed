@@ -39,6 +39,16 @@ class StatisticsView(TemplateView):
         return context
 
 
+class CheckListView(TemplateView):
+    template_name = 'todo/checklist.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['checklists'] = models.CheckList.objects.filter(category__category_name__iexact=kwargs['category_name'])
+        context['items'] = models.Item.objects
+        return context
+
+
 class CategoryAddView(FormView):
     template_name = 'todo/statistics.html'
     form_class = forms.CategoryForm
