@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listed</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+{% include 'todo/header.html' %}
+
+<div class="div0">
+    <h1>Welcome to Listed!</h1><br>
+    <p>Listed helps you keep track of your goals in a simple way!</p>
+    <p>"No matter how many goals you have achieved, you must set your sights on a higher one."</p>
+    <img src="{% static "example.jpg" %}" class="image1">
+</div>
+<div class="div1">
+    <h1 class="h1">Create</h1>
+    <p class="p1">Your checklist</p>
+</div>
+<div class="div2">
+    <h1 class="h2">Complete</h1>
+    <p class="p2">Your goals</p>
+    <img src="{% static "example.jpg" %}" class="image2">
+</div>
+<div class="div3">
+    <h1 class="h3">Watch</h1>
+    <p class="p3">Your progress</p>
+    <img src="{% static "example.jpg" %}" class="image3">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
