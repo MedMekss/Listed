@@ -3,10 +3,6 @@
 */
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-body {
-    background: #fafafa;
-}
-
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
@@ -67,15 +63,11 @@ a:focus {
     background: #001A60;
     color: #fff;
     transition: all 0.3s;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.38);
 }
 
 #sidebar.active {
     margin-left: calc(-70vw);
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
 }
 
 #sidebar ul p {
@@ -84,7 +76,7 @@ a:focus {
 }
 
 #sidebar ul li a {
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 1.1em;
     display: block;
 }
@@ -130,17 +122,6 @@ ul.CTAs a {
     margin-bottom: 5px;
 }
 
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
-
-a.article,
-a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
-}
-
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
@@ -153,10 +134,9 @@ a.article:hover {
 
 .logo {
     width: 68px;
-    margin: -100px;
+    margin: -100px 1vw;
     position: relative;
     top: 12px;
-    margin-right: 2em;
 }
 
 /* ---------------------------------------------------
@@ -165,7 +145,7 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: calc(-80vw);
+        margin-left: calc(-80vw + -10px);
         width: 80vw;
     }
 
@@ -188,7 +168,7 @@ a.article:hover {
 @media (min-width: 768px) and (max-width: 1400px) {
     #sidebar {
         width: 25vw;
-        margin-left: calc(-25vw);
+        margin-left: calc(-25vw + -10px);
     }
 
     #sidebar.active {
@@ -212,7 +192,7 @@ a.article:hover {
 @media (min-width: 1400px) {
     #sidebar {
         width: 12vw;
-        margin-left: calc(-12vw);
+        margin-left: calc(-12vw + -10px);
     }
 
     #sidebar.active {

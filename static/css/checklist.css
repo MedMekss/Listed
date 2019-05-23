@@ -1,0 +1,60 @@
+.checklist {
+    display: flex;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    overflow: auto;
+    margin: 12px auto;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.16);
+}
+
+.checklistcategorytext {
+padding-left: 15px;
+    margin: 0;
+    display: inline;
+    font-size: 12px;
+    color: #FFFF58;
+    text-shadow: 0 0 1px rgba(0,0,0,0.16);
+}
+
+.checklistheader {
+    padding: 10px 12px;
+}
+
+.checklist {
+    text-align: left; !important;
+}
+
+.checklist h1 {
+    display: inline;
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.checklistbody {
+    padding: 2px 15px;
+}
+
+.checklist ul li {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 24px;
+}
+
+@media (max-width: 768px) {
+    .checklist {
+        width: 90vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+    .checklist {
+        width: 60vw;
+    }
+}
+
+@media (min-width: 1280px) {
+    .checklist {
+        width: 45vw;
+    }
+}
