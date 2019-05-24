@@ -44,8 +44,9 @@ class CheckListView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['category'] = kwargs['category_name']
         context['checklists'] = models.CheckList.objects.filter(category__category_name__iexact=kwargs['category_name'])
-        context['items'] = models.Item.objects
+        context['items'] = models.Item.objects.all()
         return context
 
 
