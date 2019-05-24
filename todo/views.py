@@ -10,7 +10,7 @@ from . import models
 
 # /todo/
 class IndexView(TemplateView):
-    template_name = 'todo/home.html'
+    template_name = 'todo/index.html'
 
 
 class CategoryAddView(FormView):

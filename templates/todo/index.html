@@ -1,0 +1,33 @@
+{% extends 'todo/template.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="text-align-center">
+    <div class="upperdiv"><h2>Welcome to Listed!</h2><br>
+        <p class="color4">Listed helps you keep track fo your goals in a simple way!</p>
+        <p class="color4">"No matter how many goals you have achieved, you must set your sights on a higher one."</p>
+    </div>
+    <div class="row nopad nomarg justify-content-center lowerdiv color1">
+        <div class="col-lg-3 col"><h1>Create</h1>
+            <p class="color1">Your checklist</p>
+        </div>
+        <div class="col col-lg-3"><img src="{% static 'images/Checklist.png' %}" class="image1"></img>
+        </div>
+    </div>
+    <div class="row nopad nomarg justify-content-center lowerdiv ">
+        <div class="col col-lg-3"><img src="{% static 'images/Goals.png' %}" class="image"></img>
+        </div>
+        <div class="col-lg-3 col color4"><h1>Complete</h1>
+            <p class="color4">Your goals</p>
+        </div>
+    </div>
+    <div class="row nopad nomarg justify-content-center lowerdiv color2">
+        <div class="col-lg-3 col"><h1>Watch</h1>
+            <p class="color2">Your progress</p>
+        </div>
+        <div class="col col-lg-3"><img src="{% static 'images/Pie.png' %}" class="image"></img>
+        </div>
+    </div>
+    </div>
+
+{% endblock %}
