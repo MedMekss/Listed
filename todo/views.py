@@ -10,7 +10,7 @@ from . import models
 
 # /todo/
 class IndexView(TemplateView):
-    template_name = 'todo/statistics.html'
+    template_name = 'todo/index.html'
 
 
 class StatisticsView(TemplateView):
@@ -19,7 +19,6 @@ class StatisticsView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         categories = models.Category.objects.all()
-        context['categories'] = categories
         context['category_sizes'] = [len(models.CheckList.objects.filter(category=category)) for category in categories]
 
         context['bar_data'] = []
@@ -47,19 +46,4 @@ class CheckListView(TemplateView):
         context['category'] = kwargs['category_name']
         context['checklists'] = models.CheckList.objects.filter(category__category_name__iexact=kwargs['category_name'])
         context['items'] = models.Item.objects.all()
-        return context
-
-
-class CategoryAddView(FormView):
-    template_name = 'todo/statistics.html'
-    form_class = forms.CategoryForm
-    success_url = reverse_lazy('todo:category_create')
-
-    def form_valid(self, form):
-        form.save()
-        return super(CategoryAddView, self).form_valid(form)
-
-    def get_context_data(self, **kwargs):
-        context = super(CategoryAddView, self).get_context_data(**kwargs)
-        context['categories'] = models.Category.objects.all()
         return context

@@ -30,7 +30,7 @@
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
-        <a href="#homepagelink"> <img src="{% static 'images/Logo.png' %}" class="logo"></a>
+        <a href="{% url 'todo:index' %}"> <img src="{% static 'images/Logo.png' %}" class="logo"></a>
     </nav>
 </div>
 <!-- Sidebar + Page Content -->
@@ -38,7 +38,7 @@
     <nav id="sidebar">
         <ul class="list-unstyled components">
             <li>
-                <a href="#homepage">Home</a>
+                <a href="{% url 'todo:index' %}">Home</a>
             </li>
             <li>
                 <a href="#overviewpage">Overview</a>
@@ -50,15 +50,9 @@
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
                    class="dropdown-toggle">Categories</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Category 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Category 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Category 3</a>
-                    </li>
+                    {% for category in categories %}
+                        <li><a href="{% url 'todo:checklist' category %}">{{ category.category_name }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
             <li>
