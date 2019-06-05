@@ -1,3 +1,68 @@
 body {
-    font-family: "Nirmala UI", 'helvetica';
+    font-family: "Nirmala UI", 'helvetica'; !important;
+}
+
+.picker {
+    /*position: absolute;*/
+    /*top: 12px;*/
+    /*margin: 0 5px;*/
+    /*padding: 0 5px;*/
+}
+
+.textalignauto {
+	text-align: left;
+}
+
+.padlr {
+	padding: 4px 2px; !important;
+}
+
+.no-border{
+    border: none;
+}
+
+.pad-1 {
+    margin: 0 30px;
+!important;
+}
+
+.nomargin {
+    margin: 0;
+}
+
+.transpearant {
+    background-color: transparent;
+}
+
+.button-size {
+    width: 30px;
+}
+
+.nopad {
+    padding: 0;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+
+.plus-button--small {
+	font-size: 12px;
+}
+
+.plus-button--large {
+	font-size: 22px;
 }
