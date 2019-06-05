@@ -13,6 +13,7 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tooltip.css' %}">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
             integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
             crossorigin="anonymous"></script>
@@ -40,7 +41,7 @@
                 <a href="{% url 'todo:index' %}">Home</a>
             </li>
             <li>
-                <a href="#overviewpage">Overview</a>
+                <a href="#overviewpage">Create</a>
             </li>
             <li>
                 <a href="{% url 'todo:statistics' %}">Statistics</a>

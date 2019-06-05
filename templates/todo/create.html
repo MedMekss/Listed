@@ -1,0 +1,54 @@
+{% extends 'todo/template.html' %}
+{% load static %}
+{% block content %}
+    <head>
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css"/>
+    </head>
+    <body>
+    {#                    <select style="margin-left: 15px">#}
+    {#                        <option value="Friends">Friends</option>#}
+    {#                        <option value="Education">Education</option>#}
+    {#                        <option value="Sports">Sports</option>#}
+    {#                    </select>#}
+    <div class="row d-flex flex-row justify-content-center nomargin" style="overflow: visible;">
+        <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
+            <div class="checklist createwidths">
+                <div class="checklistheader">
+                    <form action="{% url 'todo:addCategory' %}" class="align-center d-flex flex-wrap align-items-stretch" method="post">{% csrf_token %}
+                        <div class="align-center col-lg-8 col-sm-12 col-md-12 textalignauto nopad">{{ category_form.category_name }}</div>
+                        <div class="align-center col textalignauto nopad">{{ category_form.color }}</div>
+                        <div class="align-center textalignauto nopad">
+                            <button class="padlr btn transpearant align-center ml-auto">
+                                <i class="fas fa-plus" style="margin-bottom: 2px"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
+            <div class="checklist createwidths">
+                <div class="checklistheader">
+                    <form action="{% url 'todo:addChecklist' %}"
+                          class="align-center d-flex flex-wrap align-items-stretch"
+                          method="post">{% csrf_token %}
+                        <div class="align-center col-12 textalignauto nopad">{{ checklist_form.checklist_name }}</div>
+                        <div class="align-center col-12 textalignauto nopad">{{ checklist_form.category }}</div>
+                        <div class="align-center col textalignauto nopad">
+                            {{ checklist_form.start_date }}{{ checklist_form.end_date }}</div>
+                        <div class="align-center ml-auto">
+                            <button type="submit" value="add"
+                                    class="padlr btn transpearant align-center ml-auto right">
+                                <i class="fas fa-plus" style="margin-bottom: 2px"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock %}
