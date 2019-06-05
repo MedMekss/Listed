@@ -88,6 +88,7 @@
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -97,8 +98,8 @@
         <subPane>
           <expand>
             <path>
-              <item name="Listed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Listed" type="462c0819:PsiDirectoryNode" />
+              <item name="Listed-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Listed-master" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Listed" type="b2602c69:ProjectViewProjectNode" />
@@ -111,14 +112,25 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Listed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Listed" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="todo" type="462c0819:PsiDirectoryNode" />
+              <item name="Listed-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Listed-master" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Listed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Listed" type="462c0819:PsiDirectoryNode" />
+              <item name="Listed-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Listed-master" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Listed-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Listed-master" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Listed-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Listed-master" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="todo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -153,6 +165,19 @@
       <recent name="C:\Users\josha\Documents\GitHub\Listed\todo" />
       <recent name="C:\Users\josha\Documents\GitHub\Listed\templates\todo\includes" />
       <recent name="C:\Users\Jared\Documents\GitHub\Listed\static\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jared\Documents\GitHub\Listed\static" />
+      <recent name="C:\Users\Jared\Documents\GitHub\Listed\templates\todo" />
+    </key>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\PycharmProjects\Listed-master\static\images" />
+      <recent name="C:\Users\Jared\Documents\GitHub\Listed\static\images" />
+      <recent name="C:\Users\Jared\Documents\GitHub\Listed\static" />
+      <recent name="C:\Users\Jared\Documents\GitHub\Listed\templates\todo" />
+      <recent name="C:\Users\Jared\Documents\GitHub\Listed\templates\images" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Jared\Documents\GitHub\Listed\static" />
