@@ -1,6 +1,11 @@
 {% extends 'todo/template.html' %}
 {% load custon_tags %}
 {% load static %}
+
+{% block title %}
+    category - {{ category }}
+{% endblock %}
+
 {% block content %}
     {% if checklists|length > 0 %}
         <h1 align="center">{{ category.title }}</h1>

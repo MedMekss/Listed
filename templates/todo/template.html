@@ -1,12 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CHANGE THE TILE</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
@@ -53,21 +52,6 @@
                     {% for category in categories %}
                         <li><a href="{% url 'todo:checklist' category %}">{{ category.category_name }}</a></li>
                     {% endfor %}
-                </ul>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                   class="dropdown-toggle">Checklists</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Checklist 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Checklist 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Checklist 3</a>
-                    </li>
                 </ul>
             </li>
         </ul>
