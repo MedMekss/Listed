@@ -47,3 +47,6 @@ class CheckListView(TemplateView):
         context['checklists'] = models.CheckList.objects.filter(category__category_name__iexact=kwargs['category_name'])
         context['items'] = models.Item.objects.all()
         return context
+
+
+
