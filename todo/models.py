@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 import datetime
 
@@ -12,13 +13,13 @@ class Category(models.Model):
 
 
 class CheckList(models.Model):
-    title = models.CharField(max_length=32)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    checklist_name = models.CharField(max_length=32)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, default='')
     start_date = models.DateField(default=datetime.date.today)
     end_date = models.DateField(default=datetime.date.today)
 
     def __str__(self):
-        return self.title
+        return self.checklist_name
 
 
 class Item(models.Model):
@@ -27,4 +28,4 @@ class Item(models.Model):
     checklist = models.ForeignKey(CheckList, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return self.checklist.checklist_name + ' | ' + self.title
