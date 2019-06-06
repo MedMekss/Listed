@@ -1,5 +1,6 @@
 from django import forms
-from .models import *
+from django.forms import widgets
+from .models import CheckList, Category
 
 
 class CategoryForm(forms.ModelForm):

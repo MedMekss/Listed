@@ -1,12 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Create</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
@@ -26,12 +25,12 @@
 <body>
 <!-- Navigation Bar -->
 <div class="navigation">
-    <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="padding-left: 1em">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between" style="padding-left: 1em">
         <button type="button" id="sidebarCollapse" class="btn btn-default">
             <i class="fas fa-align-left"></i>
             <span>Toggle Sidebar</span>
         </button>
-        <a href="#homepagelink"> <img src="{% static 'images/Logo.png' %}" class="logo"></a>
+        <a href="{% url 'todo:index' %}"> <img src="{% static 'images/Logo.png' %}" class="logo"></a>
     </nav>
 </div>
 <!-- Sidebar + Page Content -->
@@ -39,27 +38,21 @@
     <nav id="sidebar">
         <ul class="list-unstyled components">
             <li>
-                <a href="#homepage">Home</a>
+                <a href="{% url 'todo:index' %}">Home</a>
             </li>
             <li>
-                <a href="#overviewpage">Create</a>
+                <a href="{% url 'todo:create' %}">Create</a>
             </li>
             <li>
-                <a href="#statisticspage">Statistics</a>
+                <a href="{% url 'todo:statistics' %}">Statistics</a>
             </li>
             <li>
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
                    class="dropdown-toggle">Categories</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Category 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Category 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Category 3</a>
-                    </li>
+                    {% for category in categories %}
+                        <li><a href="{% url 'todo:checklist' category %}">{{ category.category_name }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
         </ul>
@@ -71,7 +64,6 @@
         </div>
     </div>
 </div>
-
 <!-- jQuery CDN - Slim version (=without AJAX) -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -100,6 +92,9 @@
         });
     });
 </script>
+
+{% block script %}
+{% endblock %}
 </body>
 
 </html>

@@ -1,0 +1,37 @@
+{% extends 'todo/template.html' %}
+{% block title %}
+    statistics
+{% endblock %}
+{% block content %}
+
+    <div class="row d-flex justify-content-center">
+        <div class="pages">
+            <div class="canvas">
+                <canvas id="chart-doughnut"></canvas>
+            </div>
+            <br>
+            <div style="text-align: center"> {# CENTER #}
+                <p>This is a summary of the amount<br>
+                    of checklists you have set per category.</p>
+                <p>It's great to set goals, but do you<br>
+                    achieve them as well?</p>
+            </div>
+            <div class="canvas">
+                <canvas id="chart-bar"></canvas>
+            </div>
+            <br>
+            <div style="text-align: center">
+                <p>This is a summary of your completion rate.<br>
+                    A higher percentage means you are doing<br>
+                    better to keep your goals!</p>
+                <p>You are doing well!<br>
+                    Try working a little more on your Education.. </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    {% include 'todo/includes/statistics.html' %}
+{% endblock %}
