@@ -10,23 +10,30 @@
     {% if checklists|length > 0 %}
         <h1 align="center">{{ category.title }}</h1>
         {% for checklist in checklists %}
-            <div class="checklist">
-                <div class="checklistheader">
-                    <h1>{{ checklist.title }}</h1>
+            <div class="row d-flex flex-row justify-content-center nomargin" style="overflow: visible;">
+                <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
+                    <div class="checklist createwidths">
+                        <div class="checklistheader">
+                            <h1>{{ checklist.title }}</h1>
 
-                    <p class="checklistcategorytext"
-                       style="color: {{ checklist.category.color }};">{{ checklist.category.category_name }}</p>
-                    <progress-ring stroke="6" radius="18" progress="{{ items|get_progress:checklist }}"></progress-ring>
-                    <ul class="list-unstyled">
-                        {% for item in items|is_checklist:checklist %}
-                            <li>{{ item.title }}</li>
-                        {% endfor %}
-                    </ul>
+                            <p class="checklistcategorytext"
+                               style="color: {{ checklist.category.color }};">{{ checklist.category.category_name }}</p>
+                            <progress-ring stroke="6" radius="18"
+                                           progress="{{ items|get_progress:checklist }}"></progress-ring>
+                            <ul class="list-unstyled">
+                                {% for item in items|is_checklist:checklist %}
+                                    <li>{{ item.title }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         {% endfor %}
     {% else %}
-        <h1 align="center">Category doesn't exist</h1>
+        <h2 align="center">Category doesn't exist or there are no checklists</h2>
+        <p align="center">add a checklist <a style="text-decoration: underline; color: -webkit-link"
+                                             href="{% url 'todo:create' %}">here</a></p>
     {% endif %}
 {% endblock %}
 {% block script %}

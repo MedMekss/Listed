@@ -9,7 +9,11 @@ from . import models
 
 
 # /todo/
-class IndexView(View):
+class IndexView(TemplateView):
+    template_name = 'todo/index.html'
+
+
+class CreateView(View):
     def get(self, request):
         context = {
             'category_form': forms.CategoryForm,
@@ -17,8 +21,6 @@ class IndexView(View):
         }
         return render(request=request, template_name='todo/create.html', context=context)
 
-class CreateView(FormView):
-    template_name = 'todo/create.html'
 
 class StatisticsView(TemplateView):
     template_name = 'todo/statistics.html'
@@ -59,12 +61,14 @@ class CheckListView(TemplateView):
 def addCategory(request):
     if request.method == "POST":
         category = forms.CategoryForm(request.POST)
-        category.save()
-    return redirect('/todo/')
+        if category.is_valid():
+            category.save()
+    return redirect('todo:create')
 
 
 def addChecklist(request):
     if request.method == "POST":
         checklist = forms.ChecklistForm(request.POST)
-        checklist.save()
-    return redirect('/todo/')
+        if checklist.is_valid():
+            checklist.save()
+    return redirect('todo:create')
