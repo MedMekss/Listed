@@ -14,15 +14,12 @@
                 <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
                     <div class="checklist createwidths">
                         <div class="checklistheader">
-                            <h1>{{ checklist.title }}</h1>
-
-                            <p class="checklistcategorytext"
-                               style="color: {{ checklist.category.color }};">{{ checklist.category.category_name }}</p>
+                            <h1>{{ checklist.checklist_name }}</h1>
                             <progress-ring stroke="6" radius="18"
                                            progress="{{ items|get_progress:checklist }}"></progress-ring>
                             <ul class="list-unstyled">
                                 {% for item in items|is_checklist:checklist %}
-                                    <li>{{ item.title }}</li>
+                                    <li class="list-items">{{ item.title }}</li>
                                 {% endfor %}
                             </ul>
                         </div>

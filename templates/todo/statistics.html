@@ -4,13 +4,13 @@
 {% endblock %}
 {% block content %}
 
-    <div class="row d-flex justify-content-center">
+    <div class="row nomargin d-flex justify-content-center">
         <div class="pages">
             <div class="canvas">
                 <canvas id="chart-doughnut"></canvas>
             </div>
             <br>
-            <div style="text-align: center"> {# CENTER #}
+            <div align="center">
                 <p>This is a summary of the amount<br>
                     of checklists you have set per category.</p>
                 <p>It's great to set goals, but do you<br>
@@ -20,8 +20,8 @@
                 <canvas id="chart-bar"></canvas>
             </div>
             <br>
-            <div style="text-align: center">
-                <p>This is a summary of your completion rate.<br>
+            <div align="center">
+                <p style="max-width: 80%;">This is a summary of your completion rate.<br>
                     A higher percentage means you are doing<br>
                     better to keep your goals!</p>
                 <p>You are doing well!<br>

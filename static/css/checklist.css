@@ -23,13 +23,8 @@ form div{
     visibility: hidden;
 }
 
-.checklistcategorytext {
-    padding-left: 15px;
-    margin: 0;
-    display: inline;
-    font-size: 12px;
-    color: #FFFF58;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.16);
+.list-items {
+    padding-left: 16px;
 }
 
 .checklistheader:hover {
@@ -49,7 +44,7 @@ form div{
     min-height: 46px;
     overflow: auto;
     width: 100%;
-    padding: 10px 12px;
+    padding: 10px 24px;
 }
 
 .checklist h1 {
