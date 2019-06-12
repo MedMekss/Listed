@@ -10,7 +10,7 @@
     max-width: 100% !important;
 }
 
-form div{
+form div {
     margin: 5px 0;
     align-items: center;
 }
@@ -37,7 +37,7 @@ form div{
 }
 
 .checklistheader:hover .checklistheaderbutton {
-        visibility: visible;
+    visibility: visible;
 }
 
 .checklistheader {

@@ -19,7 +19,15 @@
                                            progress="{{ items|get_progress:checklist }}"></progress-ring>
                             <ul class="list-unstyled">
                                 {% for item in items|is_checklist:checklist %}
-                                    <li class="list-items">{{ item.title }}</li>
+                                    <li class="list-items">
+                                        {% if item.completed %}
+                                            <input type="checkbox" name="{{ item.title }}" id="{{ item.title }}" checked>{{ item.title }}
+                                        {% else %}
+                                            <input type="checkbox" name="{{ item.title }}" id="{{ item.title }}">{{ item.title }}
+                                        {% endif %}
+
+                                        <label for="{{ item.title }}"></label>
+                                    </li>
                                 {% endfor %}
                             </ul>
                         </div>

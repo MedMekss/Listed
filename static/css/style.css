@@ -20,7 +20,7 @@ body {
 }
 
 .nomargin {
-    margin: 0;
+    margin: 0; !important;
 }
 
 .transpearant {
@@ -60,17 +60,31 @@ body {
 	font-size: 22px;
 }
 
-.upperdiv{
-    height: 250px;
+.home {
     width: 100%;
+    margin-top: -10px;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.upperdiv{
+    padding: 10px;
     text-align: center;
     color: #001A60;
 }
+
+.upperdiv h2, p {
+    padding-top: 13px;
+}
+
+.upperdiv p:last-child {
+    padding-bottom: 7px;
+}
+
 .lowerdiv{
-    height: 200px;
+    padding: 40px;
     align-items: center;
     text-align: center;
-    width: 100%;
 }
 .color1{
     background-color: #001A60;

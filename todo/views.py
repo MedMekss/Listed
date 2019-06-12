@@ -72,3 +72,11 @@ def addChecklist(request):
         if checklist.is_valid():
             checklist.save()
     return redirect('todo:create')
+
+
+def addItem(request):
+    if request.method == "POST":
+        checklist = forms.ChecklistForm(request.POST)
+        if checklist.is_valid():
+            checklist.save()
+    return redirect('todo:create')
