@@ -18,12 +18,16 @@
             ]
         },
         options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 2,
             cutoutPercentage: 60,
             title: {
                 display: true,
                 text: 'Checklist per category',
                 fontFamily: 'Nirmala UI',
                 fontColor: '#001A60',
+                fontSize: 15,
             },
             legend: {
                 position: 'right'
@@ -49,12 +53,15 @@
             ]
         },
         options: {
-            aspectRatio: 1,
+            responsive: true,
+            maintainAspectRatio: true,
+            aspectRatio: 2,
             title: {
                 display: true,
                 text: 'Completion rate',
                 fontFamily: 'Nirmala UI',
                 fontColor: '#001A60',
+                fontSize: 15,
             },
             legend: {
                 display: false,
@@ -64,7 +71,7 @@
                     ticks: {
                         min: 0,
                         max: 100,
-                        stepSize: 10,
+                        stepSize: 25,
                         callback: function (value, index, values) {
                             return value + '%';
                         }
