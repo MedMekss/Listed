@@ -23,7 +23,7 @@ class CheckList(models.Model):
 
 
 class Item(models.Model):
-    title = models.CharField(max_length=32, unique=True)
+    title = models.CharField(max_length=32)
     completed = models.BooleanField(default=False)
     checklist = models.ForeignKey(CheckList, on_delete=models.CASCADE)
 

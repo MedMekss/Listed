@@ -72,3 +72,11 @@ def addChecklist(request):
         if checklist.is_valid():
             checklist.save()
     return redirect('todo:create')
+
+
+def checkGoal(request, id):
+    goal = models.Item.objects.get(id=id)
+    goal.completed = False if goal.completed else True
+    goal.save()
+
+    return redirect(request.headers['Referer'])
