@@ -2,32 +2,48 @@
 {% block title %}
     statistics
 {% endblock %}
-{% block content %}
 
-    <div class="row nomargin d-flex justify-content-center">
-        <div class="pages">
-            <div class="canvas">
-                <canvas id="chart-doughnut"></canvas>
-            </div>
-            <br>
-            <div align="center">
-                <p>This is a summary of the amount<br>
-                    of checklists you have set per category.</p>
-                <p>It's great to set goals, but do you<br>
-                    achieve them as well?</p>
-            </div>
-            <div class="canvas">
-                <canvas id="chart-bar"></canvas>
-            </div>
-            <br>
-            <div align="center">
-                <p style="max-width: 80%;">This is a summary of your completion rate.<br>
-                    A higher percentage means you are doing<br>
-                    better to keep your goals!</p>
-                <p>You are doing well!<br>
-                    Try working a little more on your Education.. </p>
+{% block style %}
+    <style>
+        .chartjs-size-monitor .chartjs-size-monitor-expand .chartjs-size-monitor-shrink {
+            position: relative;
+        !important;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-center">
+        <div class="pages col-12">
+            <div class="statistics">
+                <div class="statistics-item" style="min-height: 90vh">
+                    <div class="col-xs-12 col-sm-10 col-md-7 col-lg-5 col-xl-4"
+                         style="flex: none; min-height: 0%; max-height:100%;">
+                        <canvas style="width: 100%; height: 100%; min-height: 350px" id="chart-doughnut"></canvas>
+                    </div>
+                    <div style="text-align: center; align-items: center; padding: 2em"> {# CENTER #}
+                        <p>This is a summary of the amount<br>
+                            of checklists you have created per category.</p>
+                        <p>It's great to set goals, but do you
+                            achieve them as well?</p>
+                    </div>
+                </div>
+                <div class="statistics-item">
+                    <div class="col-xs-12 col-sm-10 col-md-7 col-lg-5 col-xl-4"
+                         style="flex: none; min-height: 0%; max-height:100%;">
+                        <canvas style="width: 100%; height: 100%; min-height: 400px" id="chart-bar"></canvas>
+                    </div>
+                    <div style="text-align: center; padding: 2em">
+                        <p>This is a summary of your completion rate.<br>
+                            A higher percentage means you are doing
+                            better to keep your goals!</p>
+                        <p>You are doing well!<br>
+                            Try working a little more on your Education.. </p>
+                    </div>
+                </div>
             </div>
         </div>
+    </div>
     </div>
 {% endblock %}
 

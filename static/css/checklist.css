@@ -23,8 +23,17 @@ form div {
     visibility: hidden;
 }
 
-.list-items {
-    padding-left: 16px;
+.checklistcategorytext {
+    padding-left: 15px;
+    margin: 0;
+    display: inline;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFF58;
+}
+
+.overflowscroll {
+    overflow: scroll;
 }
 
 .checklistheader:hover {
@@ -60,9 +69,14 @@ form div {
 }
 
 .checklist ul li {
-    font-size: 13px;
+    padding-left: 25px;
+    font-size: 14px;
     font-weight: normal;
     line-height: 24px;
+}
+
+.checklist ul {
+    margin-bottom: 0; !important;
 }
 
 @media (max-width: 768px) {

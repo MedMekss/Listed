@@ -74,9 +74,9 @@ def addChecklist(request):
     return redirect('todo:create')
 
 
-def addItem(request):
-    if request.method == "POST":
-        checklist = forms.ChecklistForm(request.POST)
-        if checklist.is_valid():
-            checklist.save()
-    return redirect('todo:create')
+def checkGoal(request, id):
+    goal = models.Item.objects.get(id=id)
+    goal.completed = False if goal.completed else True
+    goal.save()
+
+    return redirect(request.headers['Referer'])

@@ -1,17 +1,29 @@
 body {
-    font-family: "Nirmala UI", 'helvetica'; !important;
+    font-family: "Nirmala UI", 'helvetica';
+!important;
+}
+
+canvas {
+    padding: 1em;
+    flex: none; !important;
 }
 
 .textalignauto {
-	text-align: left;
+    text-align: left;
 }
 
 .padlr {
-	padding: 4px 2px; !important;
+    padding: 4px 2px;
+!important;
 }
 
-.no-border{
+.no-border {
     border: none;
+}
+
+.tablespacing {
+    display: flex; !important;
+    align-items: center; !important;
 }
 
 .pad-1 {
@@ -20,7 +32,8 @@ body {
 }
 
 .nomargin {
-    margin: 0; !important;
+    margin: 0;
+!important;
 }
 
 .transpearant {
@@ -35,29 +48,29 @@ body {
     padding: 0;
 }
 
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#0C9;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #0C9;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 3px #999;
 }
 
-.my-float{
-	margin-top:22px;
+.my-float {
+    margin-top: 22px;
 }
 
 .plus-button--small {
-	font-size: 12px;
+    font-size: 12px;
 }
 
 .plus-button--large {
-	font-size: 22px;
+    font-size: 22px;
 }
 
 .home {
@@ -67,7 +80,40 @@ body {
     grid-template-rows: repeat(4, 1fr);
 }
 
-.upperdiv{
+.statistics {
+    margin-top: -10px;
+    display: grid;
+    grid-auto-rows: 1fr;
+}
+
+.statistics-item {
+    border: 10px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1em;
+}
+
+@media (max-width: 1280px) {
+    .statistics-item {
+        flex-direction: column;
+    }
+}
+
+canvas {
+    height: 100%;
+}
+
+#chart-doughnut {
+    height: 100px; !important;
+}
+
+#chart-bar {
+    height: 100%;
+}
+
+.upperdiv {
     padding: 10px;
     text-align: center;
     color: #001A60;
@@ -81,33 +127,40 @@ body {
     padding-bottom: 7px;
 }
 
-.lowerdiv{
+.lowerdiv {
     padding: 40px;
     align-items: center;
     text-align: center;
 }
-.color1{
+
+.color1 {
     background-color: #001A60;
     color: white;
 }
-.color2{
+
+.color2 {
     background-color: #495F9D;
     color: white;
 }
-.color3{
+
+.color3 {
     color: black;
 }
+
 .color4 {
     color: #001A60;
 }
-.image{
+
+.image {
     height: 150px;
     width: 150px;
 }
-.image1{
+
+.image1 {
     height: 97px;
     width: 175px;
 }
+
 .divcontent {
     margin: auto 0;
 }

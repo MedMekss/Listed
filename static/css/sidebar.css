@@ -155,9 +155,7 @@ ul.CTAs a {
 
     #content {
         width: 100%;
-        display: flex;
         justify-content: center;
-        text-align: center;
     }
 
     #sidebarCollapse span {
