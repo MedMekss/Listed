@@ -29,3 +29,9 @@ class Item(models.Model):
 
     def __str__(self):
         return self.checklist.checklist_name + ' | ' + self.title
+
+class Messages(models.Model):
+    message = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.message

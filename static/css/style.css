@@ -92,12 +92,22 @@ canvas {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 1em;
+    padding: 0em;
 }
 
 @media (max-width: 1280px) {
+
     .statistics-item {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    canvas {
+        max-height: 300px; !important;
+    }
+    .statistics-item {
+        margin-top: -50px;
     }
 }
 
@@ -114,6 +124,7 @@ canvas {
 }
 
 .upperdiv {
+
     padding: 10px;
     text-align: center;
     color: #001A60;
@@ -128,6 +139,8 @@ canvas {
 }
 
 .lowerdiv {
+    display: flex;
+    height: 440px;
     padding: 40px;
     align-items: center;
     text-align: center;
