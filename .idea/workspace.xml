@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4381ebb8-6634-4df5-b53f-459745e9ce2d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/todo/migrations/0005_messages.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo/migrations/0006_auto_20190617_0941.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/todo/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todo/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/todo/includes/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todo/includes/statistics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/todo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/todo/statistics.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todo/statistics.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/todo/checklist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todo/checklist.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,19 +62,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/todo/create.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11">
-              <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/todo/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="104" lean-forward="true" selection-start-line="23" selection-end-line="23" selection-end-column="104" />
+            <state relative-caret-position="425">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -89,10 +74,47 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/todo/checklist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="453">
+              <caret line="42" column="78" lean-forward="true" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
+              <folding>
+                <element signature="e#2549#2595#0#HTML" expanded="true" />
+                <element signature="e#2224#2290#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/todo/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="126" selection-start-line="126" selection-end-line="126" />
+            <state relative-caret-position="236">
+              <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/todo/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,10 +132,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.checklist</find>
-      <find>float</find>
-      <find>createwidths</find>
-      <find>nomargin</find>
       <find>nomarg</find>
       <find>nomar</find>
       <find>text</find>
@@ -140,6 +158,10 @@
       <find>pad</find>
       <find>upper</find>
       <find>lower</find>
+      <find>rgba</find>
+      <find>lis</find>
+      <find>padding-5</find>
+      <find>flex-</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Jared\Documents\GitHub\Listed\static\css</dir>
@@ -166,7 +188,6 @@
         <option value="$PROJECT_DIR$/templates/todo/form_test.html" />
         <option value="$PROJECT_DIR$/todo/templatetags/custon_tags.py" />
         <option value="$PROJECT_DIR$/static/css/sidebar.css" />
-        <option value="$PROJECT_DIR$/static/css/checklist.css" />
         <option value="$PROJECT_DIR$/static/js/progress-bar.js" />
         <option value="$PROJECT_DIR$/static/js/jaredbar.js" />
         <option value="$PROJECT_DIR$/manage.py" />
@@ -174,18 +195,19 @@
         <option value="$PROJECT_DIR$/templates/todo/template.html" />
         <option value="$PROJECT_DIR$/todo/urls.py" />
         <option value="$PROJECT_DIR$/todo/urls.py" />
-        <option value="$PROJECT_DIR$/templates/todo/checklist.html" />
-        <option value="$PROJECT_DIR$/todo/models.py" />
         <option value="$PROJECT_DIR$/todo/admin.py" />
         <option value="$PROJECT_DIR$/todo/views.py" />
         <option value="$PROJECT_DIR$/todo/views.py" />
         <option value="$PROJECT_DIR$/templates/todo/includes/statistics.html" />
         <option value="$PROJECT_DIR$/templates/todo/statistics.html" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/todo/index.html" />
-        <option value="$PROJECT_DIR$/templates/todo/create.html" />
         <option value="$PROJECT_DIR$/todo/forms.py" />
+        <option value="$PROJECT_DIR$/templates/todo/create.html" />
+        <option value="$PROJECT_DIR$/static/css/checklist.css" />
+        <option value="$PROJECT_DIR$/templates/todo/checklist.html" />
+        <option value="$PROJECT_DIR$/todo/models.py" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
+        <option value="$PROJECT_DIR$/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -253,12 +275,6 @@
               <item name="Listed" type="b2602c69:ProjectViewProjectNode" />
               <item name="Listed" type="462c0819:PsiDirectoryNode" />
               <item name="todo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Listed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Listed" type="462c0819:PsiDirectoryNode" />
-              <item name="todo" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,7 +410,9 @@
       <workItem from="1559903937596" duration="600000" />
       <workItem from="1560236226655" duration="26756000" />
       <workItem from="1560336545237" duration="250000" />
-      <workItem from="1560423417202" duration="9489000" />
+      <workItem from="1560423417202" duration="10096000" />
+      <workItem from="1560707573283" duration="450000" />
+      <workItem from="1560753252279" duration="4247000" />
     </task>
     <task id="LOCAL-00001" summary="added home page">
       <created>1558700861760</created>
@@ -412,13 +430,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94200000" />
+    <option name="totallyTimeSpent" value="99504000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12313433" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14392324" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -553,13 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/checklist.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/todo/template.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-170">
@@ -607,23 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/todo/checklist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/todo/statistics.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -638,13 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="126" selection-start-line="126" selection-end-line="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/todo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -655,9 +642,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/todo/create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="94" selection-start-line="10" selection-start-column="94" selection-end-line="10" selection-end-column="94" />
+          <folding>
+            <element signature="e#533#604#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/todo/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/checklist.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/todo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
+        <state relative-caret-position="765">
           <caret line="81" column="42" lean-forward="true" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
@@ -665,20 +679,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/todo/create.html">
+    <entry file="file://$PROJECT_DIR$/templates/todo/checklist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="453">
+          <caret line="42" column="78" lean-forward="true" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
+          <folding>
+            <element signature="e#2549#2595#0#HTML" expanded="true" />
+            <element signature="e#2224#2290#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/todo/forms.py">
+    <entry file="file://$PROJECT_DIR$/todo/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="104" lean-forward="true" selection-start-line="23" selection-end-line="23" selection-end-column="104" />
+        <state relative-caret-position="425">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="146" column="20" selection-start-line="146" selection-start-column="20" selection-end-line="146" selection-end-column="20" />
         </state>
       </provider>
     </entry>

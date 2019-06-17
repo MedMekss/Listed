@@ -15,36 +15,43 @@
         </div>
         {% for checklist in checklists %}
             <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
-                <div class="checklist createwidths">
-                    <div class="checklistheader">
-                        <h1>{{ checklist.title }}</h1>
-                        {#                         Progress ring is a bit buggy plus we need to see how to tackle showing % completed  (e.g (80% completed))     #}
-                        {#                        <progress-ring stroke="5" radius="15"#}
-                        {#                                       progress="{{ items|get_progress:checklist }}" ></progress-ring>#}
-                        <p class="checklistcategorytext"
-                           style="color: {{ checklist.category.color }};">{{ checklist.checklist_name }}</p>
-                        <ul class="list-unstyled">
-                            {% for item in items|is_checklist:checklist %}
-                                <li class="list-items">
-                                    {% if item.completed %}
-                                        <input type="checkbox" onchange="window.location.href = '{% url 'todo:checkGoals' item.id %}'" name="{{ item.title }}"
-                                               id="{{ item.title }}"
-                                               checked>
-                                    {% else %}
-                                        <input type="checkbox" onchange="window.location.href = '{% url 'todo:checkGoals' item.id %}'" name="{{ item.title }}"
-                                               id="{{ item.title }}">
-                                    {% endif %}
-
-                                    <label for="{{ item.title }}">{{ item.title }}</label>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
+            <div class="checklist createwidths">
+            <div class="checklistheader">
+            <h1>{{ checklist.title }}</h1>
+            {#                         Progress ring is a bit buggy plus we need to see how to tackle showing % completed  (e.g (80% completed))     #}
+            {#                        <progress-ring stroke="5" radius="15"#}
+            {#                                       progress="{{ items|get_progress:checklist }}" ></progress-ring>#}
+            <p class="checklistcategorytext"
+               style="color: {{ checklist.category.color }};">{{ checklist.checklist_name }}</p>
+            <ul class="list-unstyled">
+            {% for item in items|is_checklist:checklist %}
+                <li class="list-items padding-5">
+                <div class="checkboxFive">
+                {% if item.completed %}
+                    <input type="checkbox"
+                           onchange="window.location.href = '{% url 'todo:checkGoals' item.id %}'"
+                           name="{{ item.title }}"
+                           id="{{ item.title }}"
+                           checked>
+                {% else %}
+                    <input type="checkbox"
+                           onchange="window.location.href = '{% url 'todo:checkGoals' item.id %}'"
+                           name="{{ item.title }}"
+                           id="{{ item.title }}">
+                {% endif %}
+                <label for="{{ item.title }}"
+                       style="margin-bottom: 1px; padding-left: 15px"></label>
+                <p id="title" style="font-size: 13px; margin-left: 15px; color: black; display: inline;">{{ item.title }}</p>
                 </div>
+                </li>
+            {% endfor %}
+            </ul>
+            </div>
+            </div>
             </div>
         {% endfor %}
     {% else %}
-        <h2 align="center">Category doesn't exist or there are no checklists</h2>
+    <h2 align="center">Category doesn't exist or there are no checklists</h2>
         <p align="center">add a checklist <a style="text-decoration: underline; color: -webkit-link"
                                              href="{% url 'todo:create' %}">here</a></p>
     {% endif %}
