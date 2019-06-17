@@ -1,0 +1,37 @@
+<script>
+    function spawn_alert(message, success) {
+        var success_class = "alert-danger";
+        if(success) {
+            success_class = "alert-success"
+        }
+        var alert = $('<div class="alert ' + success_class + '" role="alert">' + message + '</div>');
+        $('#alert').prepend(alert);
+        setTimeout(function () {
+            alert.fadeOut(666);
+        }, 2000);
+    }
+
+
+    $("#category_form").on("submit", function (l) {
+        l.preventDefault();
+
+        let csrfmiddlewaretoken = $('input[name="csrfmiddlewaretoken"]').val();
+        let category_name = $('#id_category_name').val();
+        let color = $('#id_color').val();
+
+        $.ajax({
+            url: "{% url 'todo:addCategory' %}",
+            method: "POST",
+            dataType: "json",
+            data: {
+                csrfmiddlewaretoken: csrfmiddlewaretoken,
+                category_name: category_name,
+                color: color,
+            },
+            success: function (data) {
+                spawn_alert(data['message'], data['success']);
+            }
+        })
+
+    });
+</script>

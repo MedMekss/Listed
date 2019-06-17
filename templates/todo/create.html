@@ -1,13 +1,17 @@
 {% extends 'todo/template.html' %}
 {% load static %}
+
 {% block content %}
     <div class="row d-flex flex-row justify-content-center nomargin" style="overflow: visible;">
         <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
             <div class="checklist createwidths">
                 <div class="checklistheader">
-                    <form action="{% url 'todo:addCategory' %}" class="align-center d-flex flex-wrap align-items-stretch" method="post">{% csrf_token %}
+                    <form action="{% url 'todo:addCategory' %}"
+                          class="align-center d-flex flex-wrap align-items-stretch" method="post"
+                          id="category_form">{% csrf_token %}
                         <div class="align-center col-lg-12 col-sm-12 col-md-12 textalignauto nopad">{{ category_form.category_name }}</div>
-                        <div class="align-center col textalignauto nopad tablespacing"><label>Category color: </label>{{ category_form.color }}</div>
+                        <div class="align-center col textalignauto nopad tablespacing"><label>Category
+                            color: </label>{{ category_form.color }}</div>
                         <div class="align-center textalignauto nopad">
                             <button class="padlr btn transpearant align-center ml-auto">
                                 <i class="fas fa-plus" style="margin-bottom: 2px"></i>
@@ -24,7 +28,8 @@
                           class="align-center d-flex flex-wrap align-items-stretch"
                           method="post">{% csrf_token %}
                         <div class="align-center col-12 textalignauto nopad">{{ checklist_form.checklist_name }}</div>
-                        <div class="align-center col-12 textalignauto nopad">Category: {{ checklist_form.category }}</div>
+                        <div class="align-center col-12 textalignauto nopad">
+                            Category: {{ checklist_form.category }}</div>
                         <div class="align-center col textalignauto nopad">Start Date:
                             {{ checklist_form.start_date }} <br>End Date: {{ checklist_form.end_date }}</div>
                         <div class="align-center ml-auto">
@@ -36,6 +41,14 @@
                     </form>
                 </div>
             </div>
+
+            <div id="alert">
+
+            </div>
+
         </div>
     </div>
+{% endblock %}
+{% block script %}
+    {% include 'todo/includes/create.html' %}
 {% endblock %}
