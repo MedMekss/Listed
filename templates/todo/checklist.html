@@ -35,10 +35,15 @@
                         </ul>
                     </div>
                 </div>
+                </li>
+            {% endfor %}
+            </ul>
+            </div>
+            </div>
             </div>
         {% endfor %}
     {% else %}
-        <h2 align="center">Category doesn't exist or there are no checklists</h2>
+    <h2 align="center">Category doesn't exist or there are no checklists</h2>
         <p align="center">add a checklist <a style="text-decoration: underline; color: -webkit-link"
                                              href="{% url 'todo:create' %}">here</a></p>
     {% endif %}

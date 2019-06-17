@@ -92,12 +92,22 @@ canvas {
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 1em;
+    padding: 0em;
 }
 
 @media (max-width: 1280px) {
+
     .statistics-item {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    canvas {
+        max-height: 300px; !important;
+    }
+    .statistics-item {
+        margin-top: -50px;
     }
 }
 
@@ -111,6 +121,11 @@ canvas {
 
 #chart-bar {
     height: 100%;
+}
+
+input ,select {
+    border: solid 1px rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
 }
 
 .upperdiv {
@@ -128,6 +143,9 @@ canvas {
 }
 
 .lowerdiv {
+    display: flex;
+    flex-wrap: wrap;
+    height: 440px;
     padding: 40px;
     align-items: center;
     text-align: center;
@@ -163,4 +181,60 @@ canvas {
 
 .divcontent {
     margin: auto 0;
+}
+
+.checkcontainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    cursor: pointer;
+}
+
+.padding-5 {
+    padding: 4px;
+}
+
+.checkboxFive {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+/**
+ * Create the box for the checkbox
+ */
+.checkboxFive label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #fcfcfc;
+    border:1px solid rgba(0,0,0,0.16);
+    border-radius: 3px;
+}
+
+.checkboxFive label:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 11px;
+    background: transparent;
+    top: 3px;
+    left: 2px;
+    border: 3px solid #001A60;
+    border-top: none;
+    border-right: none;
+
+    transform: rotate(-45deg);
+}
+
+.checkboxFive label:hover::after {
+    opacity: 0.25;
+}
+
+.checkboxFive input[type=checkbox]:checked + label:after {
+    opacity: 1;
 }

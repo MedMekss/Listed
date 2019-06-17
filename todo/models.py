@@ -23,9 +23,15 @@ class CheckList(models.Model):
 
 
 class Item(models.Model):
-    title = models.CharField(max_length=32)
+    title = models.CharField(max_length=28)
     completed = models.BooleanField(default=False)
     checklist = models.ForeignKey(CheckList, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.checklist.checklist_name + ' | ' + self.title
+
+class Messages(models.Model):
+    message = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.message

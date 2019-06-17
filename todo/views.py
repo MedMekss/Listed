@@ -7,6 +7,8 @@ from django.http import HttpResponse, JsonResponse
 from . import forms
 from . import models
 
+import random
+
 
 # /todo/
 class IndexView(TemplateView):
@@ -44,6 +46,43 @@ class StatisticsView(TemplateView):
                 context['bar_data'].append(int((checked / len(items) * 100)))
             except:
                 context['bar_data'].append(0)
+
+        best = models.Category.objects.first()
+        best_percentage = 0
+        worst = models.Category.objects.first()
+        worst_percentage = 100
+
+        for category in categories:
+            items = []
+            for checklist in models.CheckList.objects.filter(category=category):
+                items += models.Item.objects.filter(checklist=checklist)
+            items_count = 0
+            items_checked = 0
+            for item in items:
+                items_count += 1
+                if item.completed:
+                    items_checked += 1
+            try:
+                percentage = int((items_checked / items_count) * 100)
+            except:
+                percentage = 0
+
+            if percentage > best_percentage:
+                best_percentage = percentage
+                best = category
+            if percentage < worst_percentage:
+                worst_percentage = percentage
+                worst = category
+
+        messages = models.Messages.objects.all()
+        message = random.choice(messages)
+
+        context['message'] = str.format(
+            message.message,
+            good_title=best.category_name,
+            bad_title=worst.category_name
+        )
+
         return context
 
 

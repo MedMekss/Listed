@@ -18,7 +18,7 @@
             ]
         },
         options: {
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: true,
             aspectRatio: 2,
             cutoutPercentage: 60,
@@ -30,7 +30,12 @@
                 fontSize: 15,
             },
             legend: {
-                position: 'right'
+                position: 'bottom',
+                reverse: true,
+                labels: {
+                    boxWidth: 40,
+                    padding: 15
+                }
             },
         }
     };
@@ -53,7 +58,7 @@
             ]
         },
         options: {
-            responsive: true,
+            responsive: false,
             maintainAspectRatio: true,
             aspectRatio: 2,
             title: {
