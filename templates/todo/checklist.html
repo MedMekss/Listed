@@ -8,57 +8,56 @@
 {% block content %}
     {% if checklists|length > 0 %}
         <div class="row d-flex flex-row justify-content-center nomargin" style="overflow: visible;">
-        <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
-            <div class="createwidths">
-                <h1 align="center" style="padding: 8px">{{ category.title }}</h1>
-            </div>
-        </div>
-        {% for checklist in checklists %}
             <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
-                <div class="checklist createwidths">
-                    <div class="checklistheader">
-                        <h1>{{ checklist.title }}</h1>
-                        <p class="checklistcategorytext"
-                           style="color: {{ checklist.category.color }};">{{ checklist.checklist_name }}</p>
-                        <ul class="list-unstyled">
-                            {% for item in items|is_checklist:checklist %}
-                                <li class="list-items">
-                                    <input type="checkbox"
-                                           onchange="toggleItem('{% url 'todo:checkGoals' item.id %}')"
-                                           name="{{ item.title }}"
-                                           id="{{ item.title }}"
-                                           {% if item.completed %}checked{% endif %}>
+                <div class="createwidths">
+                    <h1 align="center" style="padding: 8px">{{ category.title }}</h1>
+                </div>
+            </div>
+            {% for checklist in checklists %}
+                <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
+                    <div class="checklist createwidths">
+                        <div class="checklistheader">
+                            <h1>{{ checklist.title }}</h1>
+                            <p class="checklistcategorytext"
+                               style="color: {{ checklist.category.color }};">{{ checklist.checklist_name }}</p>
+                            <ul class="list-unstyled">
+                                {% for item in items|is_checklist:checklist %}
+                                    <li class="list-items padding-5">
+                                        <div class="checkboxFive">
+                                            <input type="checkbox"
+                                                   onchange="toggleItem('{% url 'todo:checkGoals' item.id %}')"
+                                                   name="{{ item.title }}"
+                                                   id="{{ item.title }}"
+                                                   {% if item.completed %}checked{% endif %}>
 
-                                    <label for="{{ item.title }}">{{ item.title }}</label>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                                            <label for="{{ item.title }}"
+                                                   style="margin-bottom: 1px; padding-left: 15px"></label>
+                                            <p id="title"
+                                               style="font-size: 13px; margin-left: 15px; color: black; display: inline;">{{ item.title }}</p>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 </li>
             {% endfor %}
             </ul>
-            </div>
-            </div>
-            </div>
-        {% endfor %}
+        </div>
     {% else %}
-    <h2 align="center">Category doesn't exist or there are no checklists</h2>
+        <h2 align="center">Category doesn't exist or there are no checklists</h2>
         <p align="center">add a checklist <a style="text-decoration: underline; color: -webkit-link"
                                              href="{% url 'todo:create' %}">here</a></p>
     {% endif %}
-</div>
+    </div>
 {% endblock %}
 {% block script %}
     <script>
         function toggleItem(url) {
-            console.log(url);
             $.ajax({
                 url: url,
                 method: "GET",
-                success: function (l) {
-
-                }
             })
         }
     </script>
