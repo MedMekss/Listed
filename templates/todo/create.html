@@ -7,12 +7,12 @@
         <link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css"/>
     </head>
-    <body>
+    <body onload="categoryform.reset(); checklistform.reset()">
     <div class="row d-flex flex-row justify-content-center nomargin" style="overflow: visible;">
         <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
             <div class="checklist createwidths">
                 <div class="checklistheader">
-                    <form action="{% url 'todo:addCategory' %}" class="align-center d-flex flex-wrap align-items-stretch" method="post">{% csrf_token %}
+                    <form action="{% url 'todo:addCategory' %}" class="align-center d-flex flex-wrap align-items-stretch" method="post" id="categoryform">{% csrf_token %}
                         <div class="align-center col-lg-12 col-sm-12 col-md-12 textalignauto nopad">{{ category_form.category_name }}</div>
                         <div class="align-center col textalignauto nopad tablespacing"><label>Category color: </label>{{ category_form.color }}</div>
                         <div class="align-center textalignauto nopad">
@@ -29,7 +29,7 @@
                 <div class="checklistheader">
                     <form action="{% url 'todo:addChecklist' %}"
                           class="align-center d-flex flex-wrap align-items-stretch"
-                          method="post">{% csrf_token %}
+                          method="post" id="checklistform">{% csrf_token %}
                         <div class="align-center col-12 textalignauto nopad">{{ checklist_form.checklist_name }}</div>
                         <div class="align-center col-12 textalignauto nopad">Category: {{ checklist_form.category }}</div>
                         <div class="align-center col textalignauto nopad">Start Date:
@@ -46,4 +46,11 @@
         </div>
     </div>
     </body>
+{% endblock %}
+{% block script %}
+    <script>
+        $('#id_start_date').change(function () {
+            $('#id_end_date').prop('min',this.value);
+        })
+    </script>
 {% endblock %}
