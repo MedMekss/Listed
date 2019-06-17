@@ -5,7 +5,7 @@ import datetime
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=32)
+    category_name = models.CharField(max_length=32, unique=True)
     color = models.CharField(max_length=7)
 
     def __str__(self):
