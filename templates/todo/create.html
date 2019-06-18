@@ -51,4 +51,13 @@
 {% endblock %}
 {% block script %}
     {% include 'todo/includes/create.html' %}
+    <script>
+        $('#id_start_date').change(function () {
+            var end_date = $('#id_end_date');
+            end_date.prop('min', this.value);
+            if(end_date.val() < this.value) {
+               end_date.prop('value', this.value);
+            }
+        });
+    </script>
 {% endblock %}

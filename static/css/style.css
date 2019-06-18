@@ -5,7 +5,8 @@ body {
 
 canvas {
     padding: 1em;
-    flex: none; !important;
+    flex: none;
+!important;
 }
 
 .textalignauto {
@@ -22,8 +23,10 @@ canvas {
 }
 
 .tablespacing {
-    display: flex; !important;
-    align-items: center; !important;
+    display: flex;
+!important;
+    align-items: center;
+!important;
 }
 
 .pad-1 {
@@ -77,7 +80,7 @@ canvas {
     width: 100%;
     margin-top: -10px;
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 25% repeat(3, 1fr);
 }
 
 .statistics {
@@ -104,8 +107,10 @@ canvas {
 
 @media (max-width: 576px) {
     canvas {
-        max-height: 300px; !important;
+        max-height: 300px;
+    !important;
     }
+
     .statistics-item {
         margin-top: -50px;
     }
@@ -116,14 +121,15 @@ canvas {
 }
 
 #chart-doughnut {
-    height: 100px; !important;
+    height: 100px;
+!important;
 }
 
 #chart-bar {
     height: 100%;
 }
 
-input ,select {
+input, select {
     border: solid 1px rgba(0, 0, 0, 0.23);
     border-radius: 4px;
 }
@@ -200,9 +206,7 @@ input ,select {
     cursor: pointer;
 }
 
-/**
- * Create the box for the checkbox
- */
+/** checkboxFive is a visual 'hack' so to say on the checkbox. It still exists, but behind our checkboxFive object. */
 .checkboxFive label {
     cursor: pointer;
     position: absolute;
@@ -211,7 +215,7 @@ input ,select {
     top: 0;
     left: 0;
     background: #fcfcfc;
-    border:1px solid rgba(0,0,0,0.16);
+    border: 1px solid rgba(0, 0, 0, 0.16);
     border-radius: 3px;
 }
 
@@ -237,4 +241,23 @@ input ,select {
 
 .checkboxFive input[type=checkbox]:checked + label:after {
     opacity: 1;
+}
+
+/*Overwriting the Bootstrap alert visuals here*/
+.alert-danger {
+    background-color: transparent;
+!important;
+    border-radius: 10px 2px 10px 10px;
+!important;
+    border: solid 2px rgba(255, 0, 0, 0.43);
+!important;
+}
+
+.alert-success {
+    background-color: transparent;
+!important;
+    border-radius: 10px 2px 10px 10px;
+!important;
+    border: solid 2px rgba(0, 255, 0, 0.43);
+!important;
 }
