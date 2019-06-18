@@ -21,6 +21,6 @@ class ChecklistForm(forms.ModelForm):
         widgets = {
             'checklist_name': forms.TextInput(attrs={'placeholder': 'Enter Checklist Name', 'class': 'overflowscroll w-100 no-border transpearant'}),
             'category':forms.Select(attrs={'class':'', 'style': 'margin-left:10px' }),
-            'start_date': forms.TextInput(attrs={'type': 'date', 'style': 'margin-left:4px', 'min':{}}),
+            'start_date': forms.TextInput(attrs={'type': 'date', 'style': 'margin-left:4px'}),
             'end_date': forms.TextInput(attrs={'type': 'date', 'style': 'margin-left:10px; padding-right:2px; margin-top:10px'})
         }

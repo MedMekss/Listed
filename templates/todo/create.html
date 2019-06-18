@@ -2,20 +2,14 @@
 {% load static %}
 
 {% block content %}
-    <head>
-        <script type="text/javascript"
-                src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css"/>
-    </head>
-    <body>
+    {% csrf_token %}
     <div class="row d-flex flex-row justify-content-center nomargin" style="overflow: visible;">
         <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
             <div class="checklist createwidths">
                 <div class="checklistheader">
                     <form action="{% url 'todo:addCategory' %}"
                           class="align-center d-flex flex-wrap align-items-stretch" method="post"
-                          id="category_form">{% csrf_token %}
+                          id="category_form">
                         <div class="align-center col-lg-12 col-sm-12 col-md-12 textalignauto nopad">{{ category_form.category_name }}</div>
                         <div class="align-center col textalignauto nopad tablespacing"><label>Category
                             color: </label>{{ category_form.color }}</div>
@@ -33,7 +27,8 @@
                 <div class="checklistheader">
                     <form action="{% url 'todo:addChecklist' %}"
                           class="align-center d-flex flex-wrap align-items-stretch"
-                          method="post">{% csrf_token %}
+                          method="post"
+                          id="checklist_form">
                         <div class="align-center col-12 textalignauto nopad">{{ checklist_form.checklist_name }}</div>
                         <div class="align-center col-12 textalignauto nopad">
                             Category: {{ checklist_form.category }}</div>
@@ -48,11 +43,9 @@
                     </form>
                 </div>
             </div>
-
             <div id="alert">
 
             </div>
-
         </div>
     </div>
 {% endblock %}

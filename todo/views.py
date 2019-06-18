@@ -96,14 +96,16 @@ class CheckListView(TemplateView):
         context['items'] = models.Item.objects.all()
         return context
 
+
 def addCategory(request):
     if request.is_ajax():
         category = forms.CategoryForm(request.POST)
         if category.is_valid():
-            category.save()
+            category = category.save()
             return JsonResponse({
-                'message': f'successfully created {category.cleaned_data["category_name"]}',
-                'success': True
+                'message': f'successfully created {category.category_name}',
+                'success': True,
+                'id': category.id
             })
         else:
             return JsonResponse({
@@ -117,13 +119,25 @@ def addCategory(request):
         })
 
 
-
 def addChecklist(request):
-    if request.method == "POST":
+    if request.is_ajax():
         checklist = forms.ChecklistForm(request.POST)
         if checklist.is_valid():
             checklist.save()
-    return redirect('todo:create')
+            return JsonResponse({
+                'message': f'successfully created {checklist.cleaned_data["checklist_name"]}',
+                'success': True
+            })
+        else:
+            return JsonResponse({
+                'message': 'Category name already exists',
+                'success': False
+            })
+    else:
+        return JsonResponse({
+            'message': 'invalid ajax response',
+            'success': False
+        })
 
 
 def checkGoal(request, id):

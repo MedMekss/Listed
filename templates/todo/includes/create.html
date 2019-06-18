@@ -1,7 +1,7 @@
 <script>
     function spawn_alert(message, success) {
         var success_class = "alert-danger";
-        if(success) {
+        if (success) {
             success_class = "alert-success"
         }
         var alert = $('<div class="alert ' + success_class + '" role="alert">' + message + '</div>');
@@ -14,6 +14,7 @@
 
     $("#category_form").on("submit", function (l) {
         l.preventDefault();
+
 
         let csrfmiddlewaretoken = $('input[name="csrfmiddlewaretoken"]').val();
         let category_name = $('#id_category_name').val();
@@ -30,6 +31,46 @@
             },
             success: function (data) {
                 spawn_alert(data['message'], data['success']);
+                if (data['success']) {
+                    $("#category_form")[0].reset();
+
+                    $('#id_category').append(
+                        $('<option>', {
+                            value: data['id'],
+                            text: category_name
+                        })
+                    );
+                }
+            }
+        })
+
+    });
+
+    $("#checklist_form").on("submit", function (l) {
+        l.preventDefault();
+
+        let csrfmiddlewaretoken = $('input[name="csrfmiddlewaretoken"]').val();
+        let checklist_name = $('#id_checklist_name').val();
+        let category = $('#id_category').val();
+        let start_date = $('#id_start_date').val();
+        let end_date = $('#id_end_date').val();
+
+        $.ajax({
+            url: "{% url 'todo:addChecklist' %}",
+            method: "POST",
+            dataType: "json",
+            data: {
+                csrfmiddlewaretoken: csrfmiddlewaretoken,
+                checklist_name: checklist_name,
+                category: category,
+                start_date: start_date,
+                end_date: end_date
+            },
+            success: function (data) {
+                spawn_alert(data['message'], data['success']);
+                if (data['success']) {
+                    $("#checklist_form")[0].reset();
+                }
             }
         })
 
