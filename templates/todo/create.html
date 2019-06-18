@@ -2,13 +2,6 @@
 {% load static %}
 
 {% block content %}
-    <head>
-        <script type="text/javascript"
-                src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
-        <link rel="stylesheet"
-              href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css"/>
-    </head>
-    <body onload="categoryform.reset(); checklistform.reset()">
     <div class="row d-flex flex-row justify-content-center nomargin" style="overflow: visible;">
         <div class="col-lg-7 col-md-8 col-xs-12 col-sm-12 maxwidth0">
             <div class="checklist createwidths">
@@ -55,15 +48,16 @@
 
         </div>
     </div>
-    </body>
-{% endblock %}
-{% block script %}
-    <script>
-        $('#id_start_date').change(function () {
-            $('#id_end_date').prop('min',this.value);
-        })
-    </script>
 {% endblock %}
 {% block script %}
     {% include 'todo/includes/create.html' %}
+    <script>
+        $('#id_start_date').change(function () {
+            var end_date = $('#id_end_date');
+            end_date.prop('min', this.value);
+            if(end_date.val() < this.value) {
+               end_date.prop('value', this.value);
+            }
+        });
+    </script>
 {% endblock %}

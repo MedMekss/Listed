@@ -25,9 +25,9 @@ class ChecklistForm(forms.ModelForm):
             'checklist_name': forms.TextInput(
                 attrs={'placeholder': 'Enter Checklist Name', 'class': 'overflowscroll w-100 no-border transpearant'}),
             'category': forms.Select(attrs={'class': '', 'style': 'margin-left:10px'}),
-            'start_date': forms.TextInput(
-                attrs={'type': 'date', 'min': now().date(), 'style': 'margin-left:4px', 'value': now().date()}),
-            'end_date': forms.TextInput(attrs={'type': 'date', 'min': now().date(),
+            'start_date': forms.DateInput(
+                attrs={'type': 'date', 'min': now().date(), 'style': 'margin-left:4px', 'value': ''}),
+            'end_date': forms.DateInput(attrs={'type': 'date', 'min': now().date(),
                                                'style': 'margin-left:10px; padding-right:2px; margin-top:10px',
-                                               'value': now().date()})
+                                               'value': ''})
         }
